@@ -1,5 +1,5 @@
 on: push
-name:Deploy website on push
+name: Deploy website on push
 jobs:
   web-deploy:
     name: Deploy
@@ -11,6 +11,6 @@ jobs:
       uses : SamKirkland/FTP-Deploy-Action@4.3.3
       with:
         server: files.000webhost.com
-        username:premierprojetasma
-        password:iVv)wfYDTn)FclgVioNr
+        username: premierprojetasma
+        password: iVv)wfYDTn)FclgVioNr
         server-dir : public_html/
