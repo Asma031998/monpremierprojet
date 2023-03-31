@@ -4,28 +4,24 @@ name: Deploy website on push
 
 jobs:
 
-  web-deploy:
+web-deploy:
+name: Deploy
 
-    name: Deploy
+runs-on: ubuntu-latest
 
-    runs-on: ubuntu-latest
+steps:
 
-    steps:
+name: Get latest code
 
-    name: Get latest code
+uses: actions/checkout@v3
 
-    uses: actions/checkout@v3
+name: Sync files
 
-    name: Sync files
+uses: SamKirkland/FTP-Deploy-Action@4.3.3
 
-    uses: SamKirkland/FTP-Deploy-Action@4.3.3
+with:
+server: files.000webhost.com
+username: asmabenammar97
+password: iVv)wfYDTn)FclgVioNr
 
-    with:
-
-        server: files.000webhost.com
-
-        username: asmabenammar97
-
-        password: iVv)wfYDTn)FclgVioNr
-
-        server-dir : public_html/
+server-dir : public_html/
